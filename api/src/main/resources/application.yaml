@@ -25,3 +25,12 @@ server:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+velqora:
+  jwt:
+    secret: "velqora-local-development-secret-key-change-before-production-123456"
+    expiration-minutes: 120
+
+  bootstrap:
+    admin-email: "admin@velqora.com"
+    admin-password: "Admin@12345"
