@@ -13,6 +13,8 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     boolean existsByEmail(String email);
 
+    long countByCompanyId(UUID companyId);
+
     @Query("""
             select distinct u from User u
             left join fetch u.roles r

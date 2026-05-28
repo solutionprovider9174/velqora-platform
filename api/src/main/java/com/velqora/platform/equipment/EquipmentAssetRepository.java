@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface EquipmentAssetRepository extends JpaRepository<EquipmentAsset, UUID> {
@@ -30,4 +31,17 @@ public interface EquipmentAssetRepository extends JpaRepository<EquipmentAsset, 
             @Param("status") EquipmentStatus status,
             Pageable pageable
     );
+
+    @Query("""
+            select count(e) from EquipmentAsset e
+            where (:companyId is null or e.company.id = :companyId)
+            """)
+    long countDashboardEquipment(@Param("companyId") UUID companyId);
+
+    @Query("""
+            select e.status, count(e) from EquipmentAsset e
+            where (:companyId is null or e.company.id = :companyId)
+            group by e.status
+            """)
+    List<Object[]> countByStatus(@Param("companyId") UUID companyId);
 }
