@@ -1,4 +1,0 @@
-package com.velqora.platform.auth;
-
-public class AuthController {
-}

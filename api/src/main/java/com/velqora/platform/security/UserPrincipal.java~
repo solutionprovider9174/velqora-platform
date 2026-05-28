@@ -1,4 +1,0 @@
-package com.velqora.platform.security;
-
-public class UserPrincipal {
-}

@@ -1,4 +1,0 @@
-package com.velqora.platform.common.entity;
-
-public class BaseEntity {
-}
