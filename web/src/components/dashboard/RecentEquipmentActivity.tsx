@@ -1,0 +1,1 @@
+export { RecentEquipmentActivity } from './index'

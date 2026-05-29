@@ -1,0 +1,1 @@
+export { WarehouseCapacity } from './index'

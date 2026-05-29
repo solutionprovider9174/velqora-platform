@@ -1,0 +1,1 @@
+export { EquipmentLifecycleSummary } from './index'

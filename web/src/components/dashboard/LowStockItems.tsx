@@ -1,0 +1,1 @@
+export { LowStockItems } from './index'
