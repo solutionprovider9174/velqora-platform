@@ -12,7 +12,7 @@ import Link from 'next/link'
 function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return <div className={`card p-4 sm:p-5 ${className}`}>{children}</div>
 }
-function CardHead({ title, subtitle, action }: { title: string; subtitle?: string; action?: React.ReactNode }) {
+function CardHead({ title, subtitle, action }: { title: React.ReactNode; subtitle?: string; action?: React.ReactNode }) {
   return (
     <div className="flex items-start justify-between mb-4 gap-3">
       <div>
@@ -384,7 +384,7 @@ export function AiMonitoringPreview() {
   return (
     <Card className="border-l-4 border-l-brand-600">
       <CardHead
-        title={<span className="flex items-center gap-2"><Bot size={16} className="text-brand-600" /> AI Monitoring Preview</span> as any}
+        title={<span className="flex items-center gap-2"><Bot size={16} className="text-brand-600" /> AI Monitoring Preview</span>}
         subtitle="Operational signals from current data"
         action={<span className="badge bg-warning/10 text-warning border border-warning/20">Preview</span>}
       />
